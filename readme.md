@@ -6,6 +6,7 @@ Django-Embargoed is [Django](https://www.djangoproject.com) middleware with a th
   
 
 This is a port of [Embargoed](https://github.com/rameerez/embargoed) by my good friend [Rameerez](https://github.com/rameerez).
+He also maintains a list of ports on [Embargoed-list](https://github.com/rameerez/embargoed-list).
 
   
 
@@ -36,9 +37,9 @@ INSTALLED_APPS  =  [
 
 
 MIDDLEWARE  =  [
-
+...
 'embargoed.middleware.EmbargoedMiddlewareTemplate',
-
+...
 ]
 
 ```
