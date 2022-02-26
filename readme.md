@@ -1,6 +1,5 @@
-Django-Embargoed
+## Django-Embargoed
 
-====
 
 Django-Embargoed is [Django](https://www.djangoproject.com) middleware with a that blocks all requests from Russia and displays a pro-Ukraine message instead.
 
