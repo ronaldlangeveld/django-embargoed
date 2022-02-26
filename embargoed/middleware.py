@@ -19,7 +19,6 @@ def embargo(request):
         
     if data:
         country = data['country']['iso_code']
-        print(country)
         if country == 'RU':
             return True
         else:
