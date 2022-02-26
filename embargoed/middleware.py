@@ -1,9 +1,11 @@
 import maxminddb
 from django.shortcuts import render
+import os
+
 
 
 # Using an Open-Source IP db released under an Apache2 license: https://github.com/geoacumen/geoacumen-country
-reader = maxminddb.open_database('embargoed/Geoacumen-Country.mmdb')
+reader = maxminddb.open_database(f'{os.path.dirname(os.path.abspath(__file__))}/Geoacumen-Country.mmdb')
 
 def embargo(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -29,6 +31,7 @@ class EmbargoedMiddlewareTemplate:
     def __call__(self, request):
         embargoed = embargo(request)
         if embargoed:
+            #HTML From https://github.com/rameerez/embargoed/blob/main/public/maintenance.html
             return render(request, 'embargoed/index.html')
         else:
             response = self.get_response(request)
